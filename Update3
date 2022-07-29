@@ -63,7 +63,7 @@ elseif ($response -eq "B".ToUpper()) {
          # Notify if a new file has been created
          if ($fileHashDictionary[$hash.Path] -eq $null) {
              # A new file has been created!
-             Write-Host "$($hash.Path) has been created!" -ForegroundColor Green
+             Write-Host "$($hash.Path) has been created!" -ForegroundColor Blue -BackgroundColor White
          }
 
          if ($fileHashDictionary[$hash.Path] -eq $null) {
@@ -83,7 +83,7 @@ elseif ($response -eq "B".ToUpper()) {
          }
          else {
              # File file has been compromised!, notify the user
-             Write-Host "$($hash.Path) has changed!!!" -ForegroundColor Red
+             Write-Host "$($hash.Path) has changed!!!" -ForegroundColor White -BackgroundColor Black
     }
          }
 
@@ -98,7 +98,7 @@ elseif ($response -eq "B".ToUpper()) {
              $baselineFileStillExists = Test-Path -Path $key
              if (-Not $baselineFileStillExists) {
                  # One of the baseline files must have been deleted, notify the user
-                 Write-Host "$($key) has been deleted!" -ForegroundColor DarkRed -BackgroundColor Gray
+                 Write-Host "$($key) has been deleted!" -ForegroundColor Yellow -BackgroundColor Blue
 
              }
 
